@@ -1,60 +1,236 @@
 <!doctype html>
-<html lang="en">
+<html lang="ka">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>YOMARI — Privacy Policy</title>
+<title>YOMARI — კონფიდენციალურობის პოლიტიკა / Privacy Policy</title>
 <style>
-  :root { color-scheme: light dark; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-         max-width: 720px; margin: 0 auto; padding: 48px 24px; line-height: 1.65;
-         color: #1c1c1e; background: #fff; }
-  @media (prefers-color-scheme: dark){ body{ color:#eee; background:#111; } a{ color:#4da3ff; } }
-  h1 { font-size: 2rem; margin-bottom: 2px; }
-  .updated { color:#8a8a8e; margin-top:0; }
-  h2 { margin-top: 32px; }
-  a { color:#0a84ff; }
-  footer { margin-top:40px; color:#8a8a8e; font-size:.9rem; }
+  :root {
+    --brand:#A32733; --gold:#A9812E; --gold-light:#C9A24B;
+    --ink:#241A16; --muted:#6E5E50; --ground:#F1E8DA; --surface:#FBF5EC;
+    --line:#D8C7AE;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --brand:#C6303C; --gold:#C9A24B; --gold-light:#C9A24B;
+      --ink:#F4ECDD; --muted:#BFA890; --ground:#17100F; --surface:#221619;
+      --line:#3A2A2C;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 760px; margin: 0 auto; padding: 40px 20px 64px; line-height: 1.68;
+    color: var(--ink); background: var(--ground);
+  }
+  .mark { font-size: 1.05rem; font-weight: 800; letter-spacing: .24em; color: var(--brand); }
+  h1 { font-size: 1.9rem; margin: 6px 0 2px; }
+  h2 { font-size: 1.15rem; margin: 30px 0 6px; }
+  .updated { color: var(--muted); margin-top: 0; }
+  .rule { height:3px; border-radius:2px; margin:22px 0 8px;
+          background:linear-gradient(90deg,var(--brand),var(--gold),var(--brand)); }
+  a { color: var(--brand); }
+  @media (prefers-color-scheme: dark) { a { color: var(--gold-light); } }
+  /* Georgian compounds are long and have no hyphenation dictionary, so a
+     heading like „კონფიდენციალურობის" is one unbreakable 18-letter word — at
+     display size it painted straight off the right edge of a phone. Break it,
+     and give the largest heading room to shrink. */
+  h1, h2 { overflow-wrap: break-word; word-break: break-word; }
+  td, th { overflow-wrap: break-word; }
+  @media (max-width: 420px) {
+    h1 { font-size: 1.45rem; line-height: 1.25; }
+    body { padding-left: 16px; padding-right: 16px; }
+  }
+  table { border-collapse: collapse; width: 100%; margin: 10px 0 4px; }
+  th, td { border:1px solid var(--line); padding:8px 10px; text-align:left;
+           vertical-align: top; font-size:.95rem; }
+  th { background: var(--surface); }
+
+  /* On a phone a three-column table is the wrong shape: either it scrolls
+     sideways (and the third column is never seen) or the cells snap Georgian
+     words in half. So each ROW becomes its own labelled block — the same
+     information, read top to bottom, which is how a policy is read anyway. */
+  @media (max-width: 560px) {
+    table, tbody, tr, td { display: block; width: 100%; }
+    thead, table tr:first-child { position: absolute; left: -9999px; }
+    tr { border:1px solid var(--line); border-radius:10px;
+         background:var(--surface); margin:0 0 10px; padding:4px 2px; }
+    td { border:0; padding:6px 12px; }
+    td::before { content: attr(data-label); display:block;
+                 font-size:.75rem; letter-spacing:.04em; color:var(--muted);
+                 text-transform:uppercase; }
+    td + td { border-top:1px solid var(--line); }
+  }
+  ul { padding-left: 20px; }
+  .lang { font-size:.85rem; color:var(--muted); margin:0 0 4px; }
+  .en { color: var(--muted); }
+  .en h1, .en h2, .en th, .en strong { color: var(--ink); }
+  footer { margin-top:36px; color:var(--muted); font-size:.85rem; }
 </style>
 </head>
 <body>
-  <h1>YOMARI — Privacy Policy</h1>
-  <p class="updated">Last updated: 5 July 2026</p>
+  <div class="mark">YOMARI</div>
+  <h1>კონფიდენციალურობის პოლიტიკა</h1>
+  <p class="updated">ბოლო განახლება: 2026 წლის 19 აგვისტო</p>
+  <div class="rule"></div>
 
-  <p>YOMARI (“the app”, “we”) is a card-game app. This policy explains what data the
-  app handles.</p>
+  <p>YOMARI („აპლიკაცია", „ჩვენ") ქართული ბანქოს თამაშების აპლიკაციაა.
+  ეს პოლიტიკა ხსნის, რა მონაცემებს ვამუშავებთ და რატომ.</p>
 
-  <h2>Data we collect</h2>
-  <p><strong>In the current version, YOMARI collects no personal data and sends nothing
-  off your device.</strong> Specifically:</p>
+  <p><strong>ბოტების წინააღმდეგ თამაში ანგარიშს არ საჭიროებს და მონაცემებს
+  მოწყობილობიდან არსად აგზავნის.</strong> ქვემოთ აღწერილი მონაცემები
+  მუშავდება მაშინ, როცა იყენებ ონლაინ თამაშს ან ქმნი ანგარიშს.</p>
+
+  <h2>რა მონაცემებს ვამუშავებთ</h2>
+  <table>
+    <tr><th>მონაცემი</th><th>რატომ</th><th>რამდენ ხანს</th></tr>
+    <tr><td data-label="მონაცემი">სახელი (რომელსაც შენ ირჩევ)</td>
+        <td data-label="რატომ">მაგიდაზე, რეიტინგში, მეგობრების სიაში ჩვენება</td>
+        <td data-label="რამდენ ხანს">სანამ ანგარიშს არ წაშლი</td></tr>
+    <tr><td data-label="მონაცემი">ელ. ფოსტის მისამართი</td>
+        <td data-label="რატომ">ანგარიშის დადასტურება და პაროლის აღდგენა — სხვა არაფერი</td>
+        <td data-label="რამდენ ხანს">სანამ ანგარიშს არ წაშლი</td></tr>
+    <tr><td data-label="მონაცემი">პაროლი</td>
+        <td data-label="რატომ">შესვლა. ინახება <strong>მხოლოდ სქრიპტ-ჰეშის სახით</strong> (scrypt) — თავად პაროლს არ ვინახავთ და ვერ ვნახულობთ</td>
+        <td data-label="რამდენ ხანს">სანამ ანგარიშს არ წაშლი</td></tr>
+    <tr><td data-label="მონაცემი">მონეტები, მოგება/წაგება, მატჩების ისტორია</td>
+        <td data-label="რატომ">თამაშის ეკონომიკა, სტატისტიკა და რეიტინგი</td>
+        <td data-label="რამდენ ხანს">სანამ ანგარიშს არ წაშლი</td></tr>
+    <tr><td data-label="მონაცემი">მეგობრის კოდი და მეგობრების სია</td>
+        <td data-label="რატომ">ერთად თამაში და მოწვევები</td>
+        <td data-label="რამდენ ხანს">სანამ ანგარიშს ან მეგობარს არ წაშლი</td></tr>
+    <tr><td data-label="მონაცემი">მოწყობილობის იდენტიფიკატორი</td>
+        <td data-label="რატომ">შემთხვევითი კოდი, რომელსაც <em>თავად აპლიკაცია</em> ქმნის, რომ იგივე ინსტალაცია იგივე ანგარიშს დაუბრუნდეს. ეს არ არის მოწყობილობის ქარხნული ნომერი</td>
+        <td data-label="რამდენ ხანს">სანამ ანგარიშს არ წაშლი</td></tr>
+    <tr><td data-label="მონაცემი">მიმდინარე მატჩის მდგომარეობა</td>
+        <td data-label="რატომ">ონლაინ მატჩის სინქრონიზაცია (დარიგების seed და სვლების ჟურნალი)</td>
+        <td data-label="რამდენ ხანს">მატჩის შემდეგ ავტომატურად იშლება</td></tr>
+    <tr><td data-label="მონაცემი">ონლაინ სტატუსი</td>
+        <td data-label="რატომ">მეგობრებს რომ დაინახონ, ვინ არის ახლა ხაზზე</td>
+        <td data-label="რამდენ ხანს">90 წამი</td></tr>
+    <tr><td data-label="მონაცემი">IP მისამართი</td>
+        <td data-label="რატომ">მხოლოდ ბოროტად გამოყენების შეზღუდვა (მოთხოვნების რაოდენობა, ანგარიშების მასობრივი შექმნა)</td>
+        <td data-label="რამდენ ხანს">მოკლევადიანი მრიცხველი — წუთიდან ერთ საათამდე</td></tr>
+  </table>
+
+  <p><strong>რას არ ვაკეთებთ:</strong> არ გვაქვს ანალიტიკის, რეკლამის ან
+  თვალთვალის SDK-ები; არ ვაგროვებთ კონტაქტებს, ლოკაციას ან ქარხნულ
+  იდენტიფიკატორებს; მონაცემებს არავის ვყიდით და რეკლამისთვის არ ვიყენებთ.</p>
+
+  <h2>ვინ ამუშავებს ჩვენს ნაცვლად</h2>
   <ul>
-    <li><strong>Game progress &amp; settings</strong> (coins, wins, match history, profile
-    name, theme) are stored <strong>only on your device</strong>. They never leave the
-    device and are deleted when you delete the app.</li>
-    <li>We do <strong>not</strong> use analytics, advertising, or tracking SDKs.</li>
-    <li>We do <strong>not</strong> collect your name, email, contacts, location, or device
-    identifiers.</li>
+    <li><strong>Vercel</strong> — აპლიკაციის და სერვერული ფუნქციების ჰოსტინგი.</li>
+    <li><strong>Supabase</strong> (PostgreSQL) — ანგარიშები, მონეტები, სტატისტიკა, ისტორია.</li>
+    <li><strong>Upstash</strong> (Redis) — მიმდინარე მატჩის დროებითი მდგომარეობა.</li>
+    <li><strong>Resend</strong> — მხოლოდ დადასტურებისა და აღდგენის წერილები. ამ სერვისს გადაეცემა შენი ელ. ფოსტის მისამართი და წერილის ტექსტი.</li>
   </ul>
+  <p>თითოეული მათგანი მონაცემებს მხოლოდ ჩვენი დავალებით ამუშავებს.</p>
 
-  <h2>Online multiplayer (future updates)</h2>
-  <p>If online multiplayer is enabled in a future update, the app will connect to our game
-  server to match you with other players. In that mode we would process a
-  <strong>display name</strong> you choose and your <strong>in-game stats</strong> (for
-  leaderboards), plus basic connection data needed to run a real-time match. We would not
-  sell this data or use it for advertising, and this policy will be updated before any such
-  feature ships.</p>
+  <h2>ანგარიშისა და მონაცემების წაშლა</h2>
+  <p>აპლიკაციაში: <strong>პროფილი → პარამეტრები → ანგარიშის წაშლა</strong>.
+  წაშლა საბოლოოა — ერთდროულად ქრება ანგარიში, მონეტები, სტატისტიკა,
+  მატჩების ისტორია, მეგობრობები (ორივე მხრიდან) და დადასტურების ნებისმიერი
+  მოლოდინში მყოფი კოდი. დარეგისტრირებულ ანგარიშს ჯერ პაროლს ვკითხავთ.
+  სარეზერვო ასლს არ ვინახავთ.</p>
+  <p>თუ აპლიკაციასთან წვდომა აღარ გაქვს, მოგვწერე — წავშლით.</p>
+  <p>ოფლაინ თამაშის მონაცემები მხოლოდ მოწყობილობაზეა და აპლიკაციის
+  წაშლისთანავე ქრება.</p>
 
-  <h2>Children</h2>
-  <p>YOMARI is not directed at children under 13. The game includes a simulated coin economy
-  (no real money) and is rated accordingly on the App Store.</p>
+  <h2>ბავშვები</h2>
+  <p>YOMARI არ არის განკუთვნილი 13 წლამდე ბავშვებისთვის. თამაშში არის
+  სიმულირებული მონეტების ეკონომიკა (ნამდვილი ფულის გარეშე) და App Store-ში
+  შესაბამისადაა შეფასებული.</p>
 
-  <h2>Data deletion</h2>
-  <p>Because all data is stored locally, you can remove everything by deleting the app. For
-  any server-stored data in future online features, contact us to request deletion.</p>
+  <h2>ცვლილებები</h2>
+  <p>თუ პოლიტიკა შეიცვლება, თარიღი ზემოთ განახლდება. მნიშვნელოვან
+  ცვლილებას აპლიკაციაშიც გამოვაცხადებთ.</p>
 
-  <h2>Contact</h2>
-  <p>Questions about this policy: <a href="mailto:babukhadia.andria@gmail.com">babukhadia.andria@gmail.com</a></p>
+  <h2>კონტაქტი</h2>
+  <p><a href="mailto:babukhadia.andria@gmail.com">babukhadia.andria@gmail.com</a></p>
 
-  <footer><a href="index.html">← Support</a> · © 2026 YOMARI</footer>
+  <div class="rule"></div>
+
+  <div class="en">
+    <p class="lang">English</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: 19 August 2026</p>
+
+    <p>YOMARI (“the app”, “we”) is a Georgian card-game app. This policy
+    explains what data we process and why.</p>
+
+    <p><strong>Playing against bots needs no account and sends nothing off
+    your device.</strong> The data below is processed when you play online or
+    create an account.</p>
+
+    <h2>What we process</h2>
+    <table>
+      <tr><th>Data</th><th>Why</th><th>Kept</th></tr>
+      <tr><td data-label="Data">Display name (chosen by you)</td>
+          <td data-label="Why">Shown at the table, on leaderboards and in friends’ lists</td>
+          <td data-label="Kept">Until you delete the account</td></tr>
+      <tr><td data-label="Data">E-mail address</td>
+          <td data-label="Why">Account confirmation and password recovery — nothing else</td>
+          <td data-label="Kept">Until you delete the account</td></tr>
+      <tr><td data-label="Data">Password</td>
+          <td data-label="Why">Signing in. Stored <strong>only as a scrypt hash</strong>; we never store or see the password itself</td>
+          <td data-label="Kept">Until you delete the account</td></tr>
+      <tr><td data-label="Data">Coins, wins/losses, match history</td>
+          <td data-label="Why">The in-game economy, statistics and leaderboards</td>
+          <td data-label="Kept">Until you delete the account</td></tr>
+      <tr><td data-label="Data">Friend code and friends list</td>
+          <td data-label="Why">Playing together and invitations</td>
+          <td data-label="Kept">Until you delete the account or the friend</td></tr>
+      <tr><td data-label="Data">Device identifier</td>
+          <td data-label="Why">A random id the <em>app itself</em> generates so the same install returns to the same account. It is not a hardware or advertising identifier</td>
+          <td data-label="Kept">Until you delete the account</td></tr>
+      <tr><td data-label="Data">Live match state</td>
+          <td data-label="Why">Synchronising an online match (the deal seed and move log)</td>
+          <td data-label="Kept">Expires automatically after the match</td></tr>
+      <tr><td data-label="Data">Online status</td>
+          <td data-label="Why">So friends can see who is available now</td>
+          <td data-label="Kept">90 seconds</td></tr>
+      <tr><td data-label="Data">IP address</td>
+          <td data-label="Why">Abuse limits only (request rate, bulk account creation)</td>
+          <td data-label="Kept">A short-lived counter — one minute to one hour</td></tr>
+    </table>
+
+    <p><strong>What we do not do:</strong> no analytics, advertising or
+    tracking SDKs; no contacts, location or hardware identifiers; we do not
+    sell data or use it for advertising.</p>
+
+    <h2>Processors</h2>
+    <ul>
+      <li><strong>Vercel</strong> — hosting for the app and its serverless functions.</li>
+      <li><strong>Supabase</strong> (PostgreSQL) — accounts, coins, statistics, history.</li>
+      <li><strong>Upstash</strong> (Redis) — temporary live-match state.</li>
+      <li><strong>Resend</strong> — confirmation and recovery e-mail only; it receives your address and the message text.</li>
+    </ul>
+    <p>Each processes data only on our instructions.</p>
+
+    <h2>Deleting your account and data</h2>
+    <p>In the app: <strong>Profile → Settings → Delete account</strong>
+    (პროფილი → პარამეტრები → ანგარიშის წაშლა). Deletion is final and removes
+    the account, coins, statistics, match history, friendships (both
+    directions) and any pending confirmation code at once. A registered
+    account is asked for its password first. We keep no backup copy.</p>
+    <p>If you no longer have access to the app, e-mail us and we will delete
+    it.</p>
+    <p>Offline game data lives only on your device and is gone when the app
+    is deleted.</p>
+
+    <h2>Children</h2>
+    <p>YOMARI is not directed at children under 13. The game includes a
+    simulated coin economy (no real money) and is rated accordingly on the
+    App Store.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the date above is updated; significant changes
+    are also announced in the app.</p>
+
+    <h2>Contact</h2>
+    <p><a href="mailto:babukhadia.andria@gmail.com">babukhadia.andria@gmail.com</a></p>
+  </div>
+
+  <footer><a href="index.html">← მხარდაჭერა / Support</a> · © 2026 YOMARI</footer>
 </body>
 </html>

@@ -1,42 +1,166 @@
 <!doctype html>
-<html lang="en">
+<html lang="ka">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>YOMARI — Support</title>
+<title>YOMARI — მხარდაჭერა / Support</title>
+<meta name="description" content="YOMARI — ქართული ბანქოს თამაშები: ჯოკერი, ბურა, დურაკა. მხარდაჭერა და დახმარება.">
 <style>
-  :root { color-scheme: light dark; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-         max-width: 680px; margin: 0 auto; padding: 48px 24px; line-height: 1.6;
-         color: #1c1c1e; background: #fff; }
-  @media (prefers-color-scheme: dark){ body{ color:#eee; background:#111; } a{ color:#4da3ff; } }
-  h1 { font-size: 2rem; margin-bottom: 4px; }
-  .tag { color: #8a8a8e; margin-top: 0; }
-  .card { border:1px solid #e2e2e6; border-radius:14px; padding:20px 24px; margin:20px 0; }
-  @media (prefers-color-scheme: dark){ .card{ border-color:#2c2c2e; } }
-  a { color:#0a84ff; }
-  footer { margin-top:40px; color:#8a8a8e; font-size:.9rem; }
+  /* The app's own palette — "Minankari & Borjgali" (lib/core/theme/
+     app_colors.dart). A support page that looks nothing like the app it
+     supports is one more reason to doubt it is really ours. */
+  :root {
+    --brand:#A32733; --brand-dark:#C6303C; --gold:#A9812E; --gold-light:#C9A24B;
+    --ink:#241A16; --muted:#6E5E50; --ground:#F1E8DA; --surface:#FBF5EC;
+    --line:#D8C7AE;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --brand:#C6303C; --brand-dark:#C6303C; --gold:#C9A24B; --gold-light:#C9A24B;
+      --ink:#F4ECDD; --muted:#BFA890; --ground:#17100F; --surface:#221619;
+      --line:#3A2A2C;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 720px; margin: 0 auto; padding: 40px 20px 64px; line-height: 1.65;
+    color: var(--ink); background: var(--ground);
+  }
+  .mark { font-size: 1.05rem; font-weight: 800; letter-spacing: .24em; color: var(--brand); }
+  h1 { font-size: 2rem; margin: 6px 0 2px; }
+  .tag { color: var(--muted); margin-top: 0; }
+  .rule { height:3px; border-radius:2px; margin:22px 0 8px;
+          background:linear-gradient(90deg,var(--brand),var(--gold),var(--brand)); }
+  /* Georgian compounds are long and have no hyphenation dictionary, so a
+     heading like „კონფიდენციალურობის" is one unbreakable 18-letter word — at
+     display size it painted straight off the right edge of a phone. Break it,
+     and give the largest heading room to shrink. */
+  h1, h2, .q, td, th { overflow-wrap: break-word; word-break: break-word; }
+  @media (max-width: 420px) {
+    h1 { font-size: 1.45rem; line-height: 1.25; }
+    body { padding-left: 16px; padding-right: 16px; }
+  }
+  .card { border:1px solid var(--line); background:var(--surface);
+          border-radius:14px; padding:18px 22px; margin:18px 0; }
+  .card h2 { font-size:1.15rem; margin:0 0 10px; }
+  .q { font-weight:700; margin:16px 0 2px; }
+  .q:first-of-type { margin-top:0; }
+  p { margin:.4em 0; }
+  a { color: var(--brand); }
+  @media (prefers-color-scheme: dark) { a { color: var(--gold-light); } }
+  .lang { font-size:.85rem; color:var(--muted); margin:0 0 4px; }
+  .en { color: var(--muted); }
+  .en h2, .en .q { color: var(--ink); }
+  footer { margin-top:36px; color:var(--muted); font-size:.85rem; }
+  code { background:var(--ground); border:1px solid var(--line);
+         border-radius:5px; padding:1px 5px; font-size:.9em; }
 </style>
 </head>
 <body>
-  <h1>YOMARI 🃏</h1>
-  <p class="tag">Georgian card games — Jokeri, Bura, Duraka. Support &amp; help.</p>
+  <div class="mark">YOMARI</div>
+  <h1>მხარდაჭერა</h1>
+  <p class="tag">ქართული ბანქოს თამაშები — ჯოკერი, ბურა, დურაკა.</p>
+  <div class="rule"></div>
 
   <div class="card">
-    <h2>Need help?</h2>
-    <p>For questions, bug reports, or feedback about YOMARI, email us:</p>
+    <h2>დაგვიკავშირდი</h2>
+    <p>შეკითხვა, შეცდომა ან წინადადება — მოგვწერე:</p>
     <p><strong><a href="mailto:babukhadia.andria@gmail.com">babukhadia.andria@gmail.com</a></strong></p>
-    <p>We aim to reply within a few business days.</p>
+    <p>ვპასუხობთ რამდენიმე სამუშაო დღეში, ქართულად ან ინგლისურად.</p>
   </div>
 
   <div class="card">
-    <h2>Frequently asked</h2>
-    <p><strong>Do I need an account?</strong> No — you can start playing against bots immediately, offline.</p>
-    <p><strong>Is real money involved?</strong> No. Coins are virtual, in-game only, and cannot be purchased or cashed out.</p>
-    <p><strong>How do I delete my data?</strong> All game data is stored on your device. Deleting the app removes it.</p>
+    <h2>ხშირად დასმული კითხვები</h2>
+
+    <p class="q">ანგარიში სავალდებულოა?</p>
+    <p>არა. თამაშის დაწყება ბოტების წინააღმდეგ მაშინვე შეგიძლია. ანგარიში
+    სახელით, ელ. ფოსტითა და პაროლით საჭიროა მაშინ, როცა გინდა რომ მონეტები,
+    სტატისტიკა და მეგობრები ყველა მოწყობილობაზე შენთან იყოს — და რომ პაროლის
+    დავიწყების შემთხვევაში ანგარიში დაიბრუნო.</p>
+
+    <p class="q">რატომ სთხოვთ ელ. ფოსტას?</p>
+    <p>ერთადერთი მიზეზისთვის: <strong>ანგარიშის აღდგენა</strong>. ელ. ფოსტაზე
+    გიგზავნით ექვსნიშნა კოდს — დასადასტურებლად და პაროლის აღსადგენად.
+    სარეკლამო წერილებს არ ვგზავნით.</p>
+
+    <p class="q">დავადასტურე ელ. ფოსტა, კოდი კი არ მოვიდა.</p>
+    <p>შეამოწმე „სპამი"/„Junk". აპლიკაციაში დააჭირე „ხელახლა გაგზავნა"
+    (ერთი წუთის შემდეგ ხელახლა შეიძლება), ან „სხვა მისამართი", თუ მისამართში
+    შეცდომაა. კოდი 24 საათს მოქმედებს.</p>
+
+    <p class="q">პაროლი დამავიწყდა.</p>
+    <p>შესვლის ფანჯარაში დააჭირე „პაროლი დამავიწყდა", შეიყვანე ანგარიშის
+    <strong>დადასტურებული</strong> ელ. ფოსტა და მიღებული კოდით დააყენე ახალი
+    პაროლი. დაუდასტურებელ მისამართზე აღდგენის კოდს არ ვგზავნით.</p>
+
+    <p class="q">ნამდვილი ფული ერევა?</p>
+    <p>არა. მონეტები ვირტუალურია, მხოლოდ თამაშში მოქმედი; მათი ყიდვა ან
+    გატანა შეუძლებელია.</p>
+
+    <p class="q">როგორ წავშალო ანგარიში და მონაცემები?</p>
+    <p>აპლიკაციაში: <strong>პროფილი → პარამეტრები → ანგარიშის წაშლა</strong>.
+    წაიშლება ანგარიში, მონეტები, სტატისტიკა, მატჩების ისტორია და მეგობრები —
+    სამუდამოდ. დარეგისტრირებულ ანგარიშს პაროლს ვკითხავთ. თუ აპლიკაციასთან
+    წვდომა აღარ გაქვს, მოგვწერე ზემოთ მითითებულ მისამართზე.</p>
+
+    <p class="q">სხვა მოწყობილობაზე შევედი და აქედან გამომაგდო.</p>
+    <p>ასეა ჩაფიქრებული: ერთ ანგარიშში ერთი მოწყობილობაა შესული. ხელახლა
+    შესვლა ყველაფერს აბრუნებს.</p>
   </div>
 
-  <p><a href="privacy.html">Privacy Policy →</a></p>
-  <footer>© 2026 YOMARI. All rights reserved.</footer>
+  <p><a href="privacy.html">კონფიდენციალურობის პოლიტიკა →</a></p>
+
+  <div class="rule"></div>
+
+  <div class="en">
+    <p class="lang">English</p>
+
+    <div class="card">
+      <h2>Support</h2>
+      <p>Questions, bug reports or feedback:
+      <strong><a href="mailto:babukhadia.andria@gmail.com">babukhadia.andria@gmail.com</a></strong>.
+      We aim to reply within a few business days.</p>
+    </div>
+
+    <div class="card">
+      <h2>Frequently asked</h2>
+
+      <p class="q">Do I need an account?</p>
+      <p>No — you can play against bots straight away. An account (name,
+      e-mail, password) is what carries your coins, stats and friends across
+      devices, and what lets you recover the account if you forget the
+      password.</p>
+
+      <p class="q">Why do you ask for an e-mail address?</p>
+      <p>For account recovery only. We send a six-digit code to confirm the
+      address and to reset a forgotten password. We do not send marketing
+      e-mail.</p>
+
+      <p class="q">The confirmation code never arrived.</p>
+      <p>Check your spam folder, then use “ხელახლა გაგზავნა” (resend) in the
+      app — available again after a minute — or “სხვა მისამართი” to correct
+      the address. Codes last 24 hours.</p>
+
+      <p class="q">I forgot my password.</p>
+      <p>On the sign-in dialog choose “პაროლი დამავიწყდა”, enter the
+      account’s <strong>confirmed</strong> address, and set a new password
+      with the code we send. We do not send recovery codes to unconfirmed
+      addresses.</p>
+
+      <p class="q">Is real money involved?</p>
+      <p>No. Coins are virtual and in-game only. They cannot be purchased or
+      cashed out.</p>
+
+      <p class="q">How do I delete my account and data?</p>
+      <p>In the app: <strong>Profile → Settings → Delete account</strong>
+      (პროფილი → პარამეტრები → ანგარიშის წაშლა). This permanently erases the
+      account, coins, statistics, match history and friends. A registered
+      account is asked for its password first. If you no longer have access to
+      the app, e-mail us at the address above.</p>
+    </div>
+  </div>
+
+  <footer>© 2026 YOMARI · <a href="privacy.html">Privacy</a></footer>
 </body>
 </html>
